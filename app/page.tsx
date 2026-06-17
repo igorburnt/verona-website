@@ -1,7 +1,9 @@
 import AiCapable from "@/components/AiCapable";
 import Hero from "@/components/Hero";
+import InTheNews from "@/components/InTheNews";
 import Investors from "@/components/Investors";
 import Navbar from "@/components/Navbar";
+import OneProof from "@/components/OneProof";
 import VideoFounder from "@/components/VideoFounder";
 
 export default function Home() {
@@ -9,17 +11,12 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        {/* Hero pins while the Investors section scrolls up and overlaps it. */}
-        <div className="relative">
-          <div className="sticky top-0">
-            <Hero />
-          </div>
-          <div className="relative z-10">
-            <Investors />
-          </div>
-        </div>
+        <Hero />
+        <Investors />
         <VideoFounder />
         <AiCapable />
+        <OneProof />
+        <InTheNews />
       </main>
     </>
   );
