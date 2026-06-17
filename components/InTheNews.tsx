@@ -96,14 +96,11 @@ export default function InTheNews() {
           In the news
         </h2>
 
-        {/* Cards — narrower, left-aligned, sized so the section fits one screen */}
-        <div className="flex flex-wrap gap-6">
+        {/* Cards — 4 equal columns (3 visible, 4th slot left empty) */}
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {ARTICLES.map((article, i) => (
-            <article
-              key={i}
-              className="news-card flex w-full flex-col gap-4 sm:w-[calc(50%-0.75rem)] lg:w-[clamp(216px,17vw,256px)]"
-            >
-              <div className="relative aspect-[1080/1457] overflow-hidden bg-[#e7e6e2]">
+            <article key={i} className="news-card group flex flex-col gap-4">
+              <div className="relative aspect-[1080/1457] overflow-hidden bg-[#e7e6e2] opacity-40 transition-opacity duration-500 group-hover:opacity-100">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={article.image}
@@ -112,17 +109,17 @@ export default function InTheNews() {
                 />
               </div>
               <div className="flex flex-col gap-[11px]">
-                <h3 className="font-[family-name:var(--font-hedvig-serif)] text-[16px] leading-[1.4] text-forest">
+                <h3 className="font-[family-name:var(--font-hedvig-serif)] text-[20px] leading-[1.4] text-forest">
                   {article.title}
                 </h3>
-                <p className="font-[family-name:var(--font-hedvig-serif)] text-[12px] leading-[1.4] text-forest">
+                <p className="font-[family-name:var(--font-hedvig-serif)] text-[14px] leading-[1.4] text-forest">
                   {article.excerpt}
                 </p>
                 <a
                   href={article.href}
-                  className="flex items-center gap-0.5 font-[family-name:var(--font-hedvig-serif)] text-[12px] leading-[1.4] text-forest opacity-70 transition-opacity hover:opacity-100"
+                  className="flex items-center gap-0.5 font-[family-name:var(--font-hedvig-serif)] text-[14px] leading-[1.4] text-forest opacity-70 transition-opacity hover:opacity-100"
                 >
-                  <CornerDownRight className="size-3" />
+                  <CornerDownRight className="size-5" />
                   Read more
                 </a>
               </div>

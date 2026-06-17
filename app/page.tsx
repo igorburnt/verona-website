@@ -1,4 +1,6 @@
 import AiCapable from "@/components/AiCapable";
+import BrandAlreadyUse from "@/components/BrandAlreadyUse";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import InTheNews from "@/components/InTheNews";
 import Investors from "@/components/Investors";
@@ -16,8 +18,10 @@ export default function Home() {
         <VideoFounder />
         <AiCapable />
         <OneProof />
+        <BrandAlreadyUse />
         <InTheNews />
       </main>
+      <Footer />
     </>
   );
 }
